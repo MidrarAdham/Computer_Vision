@@ -64,23 +64,23 @@ plt.imshow(img, cmap='gray')
 
 #%%
 # Read the video using OpenCV:
-# while True:
-#     if cap.isOpened() == False:
-#         print("Error opening video stream or file")
-#     ret, frame = cap.read()
-#     frame = cv.resize(frame, (600, 800))
-#     if not ret:
-#         cv.destroyAllWindows()
-#         break
-#     ##
-#     # frame = process_frames(frame)
-#     # frame, fgmask = background_subtraction(frame)
-#     frame = process_frames(frame)
-#     ##
-#     cv.imshow('Frame', frame)
-#     # cv.imshow('Edges', edges)
-#     # cv.imshow('whatever', fgmask)
-#     if cv.waitKey(60) & 0xff == 27:
-#         cv.destroyAllWindows()
-#         break
-# cap.release()
+while True:
+    if cap.isOpened() == False:
+        print("Error opening video stream or file")
+    ret, frame = cap.read()
+    frame = cv.resize(frame, (600, 800))
+    if not ret:
+        cv.destroyAllWindows()
+        break
+    ##
+    # frame = process_frames(frame)
+    # frame, fgmask = background_subtraction(frame)
+    frame = media_pip_hands_tracking(frame)
+    ##
+    cv.imshow('Frame', frame)
+    # cv.imshow('Edges', edges)
+    # cv.imshow('whatever', fgmask)
+    if cv.waitKey(60) & 0xff == 27:
+        cv.destroyAllWindows()
+        break
+cap.release()

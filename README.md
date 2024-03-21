@@ -9,4 +9,7 @@
 ### Installation:
 Use pip to install opencv: ```pip3 install opencv-python```
 
+### Running project scripts:
 
+- The scripts are in the project folder in the home directory.
+- The script runs by opening the laptop camera.
